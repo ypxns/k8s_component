@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    /albert/
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,13 +19,13 @@ limitations under the License.
 package v1alpha1
 
 import (
-	internalinterfaces "k8s.io/sample-controller/pkg/generated/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/ypxns/k8s_component/mycnat-controller/pkg/generated/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
-	// Foos returns a FooInformer.
-	Foos() FooInformer
+	// Ats returns a AtInformer.
+	Ats() AtInformer
 }
 
 type version struct {
@@ -39,7 +39,7 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
-// Foos returns a FooInformer.
-func (v *version) Foos() FooInformer {
-	return &fooInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+// Ats returns a AtInformer.
+func (v *version) Ats() AtInformer {
+	return &atInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
