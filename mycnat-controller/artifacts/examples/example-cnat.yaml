@@ -1,0 +1,9 @@
+apiVersion: cnat.k8s.io/v1alpha1
+kind: At
+metadata:
+  name: example-at
+  labels:
+    controller-tools.k8s.io: "1.0"
+spec:
+  schedule: "2021-04-19T16:00:00Z"
+  command: "echo Albert"
