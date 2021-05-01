@@ -18,5 +18,5 @@ package cnat
 
 // GroupName is the group name used in this package
 const (
-	GroupName = "cnat.k8s.io"
+	GroupName = "mycnat.k8s.io"
 )
