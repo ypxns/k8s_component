@@ -32,13 +32,13 @@ import (
 
 // FakeAts implements AtInterface
 type FakeAts struct {
-	Fake *FakeCnatV1alpha1
+	Fake *FakeMycnatV1alpha1
 	ns   string
 }
 
-var atsResource = schema.GroupVersionResource{Group: "cnat.k8s.io", Version: "v1alpha1", Resource: "ats"}
+var atsResource = schema.GroupVersionResource{Group: "mycnat.k8s.io", Version: "v1alpha1", Resource: "ats"}
 
-var atsKind = schema.GroupVersionKind{Group: "cnat.k8s.io", Version: "v1alpha1", Kind: "At"}
+var atsKind = schema.GroupVersionKind{Group: "mycnat.k8s.io", Version: "v1alpha1", Kind: "At"}
 
 // Get takes name of the at, and returns the corresponding at object, and an error if there is any.
 func (c *FakeAts) Get(ctx context.Context, name string, options v1.GetOptions) (result *v1alpha1.At, err error) {

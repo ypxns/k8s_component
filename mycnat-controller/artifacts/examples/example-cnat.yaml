@@ -1,4 +1,4 @@
-apiVersion: cnat.k8s.io/v1alpha1
+apiVersion: mycnat.k8s.io/v1alpha1
 kind: At
 metadata:
   name: example-at

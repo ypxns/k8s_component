@@ -138,7 +138,7 @@ func (c *Controller) Run(threadiness int, stopCh <-chan struct{}) error {
 	}
 
 	klog.Info("Starting workers")
-	// Launch two workers to process Foo resources
+	// Launch two workers to process At resources
 	for i := 0; i < threadiness; i++ {
 		go wait.Until(c.runWorker, time.Second, stopCh)
 	}
@@ -192,7 +192,7 @@ func (c *Controller) processNextWorkItem() bool {
 			return nil
 		}
 		// Run the syncHandler, passing it the namespace/name string of the
-		// Foo resource to be synced.
+		// At resource to be synced.
 		if when, err := c.syncHandler(key); err != nil {
 			// Put the item back on the workqueue to handle any transient errors.
 			c.workqueue.AddRateLimited(key)
@@ -308,7 +308,7 @@ func (c *Controller) syncHandler(key string) (time.Duration, error) {
 
 	if !reflect.DeepEqual(original, instance) {
 		// Update the At instance, setting the status to the respective phase:
-		_, err = c.cnatClientset.CnatV1alpha1().Ats(instance.Namespace).UpdateStatus(context.TODO(), instance, metav1.UpdateOptions{})
+		_, err = c.cnatClientset.MycnatV1alpha1().Ats(instance.Namespace).UpdateStatus(context.TODO(), instance, metav1.UpdateOptions{})
 		if err != nil {
 			return time.Duration(0), err
 		}

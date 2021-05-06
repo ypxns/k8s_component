@@ -20,8 +20,8 @@ package fake
 
 import (
 	clientset "github.com/ypxns/k8s_component/mycnat-controller/pkg/generated/clientset/versioned"
-	cnatv1alpha1 "github.com/ypxns/k8s_component/mycnat-controller/pkg/generated/clientset/versioned/typed/cnat/v1alpha1"
-	fakecnatv1alpha1 "github.com/ypxns/k8s_component/mycnat-controller/pkg/generated/clientset/versioned/typed/cnat/v1alpha1/fake"
+	mycnatv1alpha1 "github.com/ypxns/k8s_component/mycnat-controller/pkg/generated/clientset/versioned/typed/cnat/v1alpha1"
+	fakemycnatv1alpha1 "github.com/ypxns/k8s_component/mycnat-controller/pkg/generated/clientset/versioned/typed/cnat/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -76,7 +76,7 @@ func (c *Clientset) Tracker() testing.ObjectTracker {
 
 var _ clientset.Interface = &Clientset{}
 
-// CnatV1alpha1 retrieves the CnatV1alpha1Client
-func (c *Clientset) CnatV1alpha1() cnatv1alpha1.CnatV1alpha1Interface {
-	return &fakecnatv1alpha1.FakeCnatV1alpha1{Fake: &c.Fake}
+// MycnatV1alpha1 retrieves the MycnatV1alpha1Client
+func (c *Clientset) MycnatV1alpha1() mycnatv1alpha1.MycnatV1alpha1Interface {
+	return &fakemycnatv1alpha1.FakeMycnatV1alpha1{Fake: &c.Fake}
 }

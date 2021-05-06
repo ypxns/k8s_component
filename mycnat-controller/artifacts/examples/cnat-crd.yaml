@@ -1,9 +1,9 @@
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
-  name: ats.cnat.k8s.io
+  name: ats.mycnat.k8s.io
 spec:
-  group: cnat.k8s.io
+  group: mycnat.k8s.io
   version: v1alpha1
   names:
     kind: At
